@@ -1,0 +1,30 @@
+{
+	"name": "ts-utils",
+	"private": true,
+	"packageManager": "pnpm@10.16.1",
+	"workspaces": [
+		"packages/*"
+	],
+	"scripts": {
+		"build": "pnpm -r build",
+		"test": "pnpm -r test",
+		"lint": "pnpm -r lint",
+		"clean": "pnpm -r clean",
+		"release": "changeset version && pnpm -r build && changeset publish",
+		"docs": "rimraf docs && pnpm -r --workspace-concurrency=1 run docs"
+	},
+	"devDependencies": {
+		"@changesets/cli": "^2.27.1",
+		"@eslint/js": "^9.35.0",
+		"@types/node": "^24.4.0",
+		"@vitest/coverage-v8": "^3.2.4",
+		"eslint": "^9",
+		"eslint-plugin-vitest": "^0.5.4",
+		"globals": "^16.4.0",
+		"tsup": "^8",
+		"typedoc": "^0.28.13",
+		"typescript": "^5",
+		"typescript-eslint": "^8.43.0",
+		"vitest": "^3.2.4"
+	}
+}

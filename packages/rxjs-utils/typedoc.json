@@ -1,0 +1,9 @@
+{
+	"entryPoints": ["src/index.ts"],
+	"out": "../../docs/rxjs-utils",
+	"tsconfig": "tsconfig.json",
+	"cleanOutputDir": true,
+	"excludePrivate": true,
+	"excludeProtected": true,
+	"excludeInternal": true
+}
