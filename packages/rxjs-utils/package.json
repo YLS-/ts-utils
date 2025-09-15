@@ -1,6 +1,8 @@
 {
 	"name": "@yohs/rxjs-utils",
-	"version": "0.1.0",
+	"author": "Yohann Ségalat",
+	"description": "RxJS utilities",
+	"version": "1.0.0",
 	"license": "MIT",
 	"type": "module",
 	"main": "./dist/index.cjs",
@@ -19,9 +21,6 @@
 		"LICENSE"
 	],
 	"sideEffects": false,
-	"engines": {
-		"node": ">=18"
-	},
 	"peerDependencies": {
 		"rxjs": ">=7.8 <9"
 	},
@@ -30,10 +29,9 @@
 	},
 	"scripts": {
 		"build": "tsup",
-		"clean": "rimraf dist",
 		"test": "vitest run",
 		"lint": "eslint 'src/**/*.{ts,tsx}'",
-		"prepublishOnly": "pnpm run build && pnpm run test",
+		"prepublishOnly": "pnpm build && pnpm lint && pnpm test",
 		"docs": "typedoc"
 	},
 	"publishConfig": {
