@@ -5,7 +5,7 @@
  * @returns A Promise that always resolves.
  */
 export function sleep$(ms: number): Promise<void> {
-	return new Promise<void>((resolve, _) => setTimeout(() => resolve(), ms) )
+	return new Promise<void>((resolve, ) => setTimeout(() => resolve(), ms) )
 }
 
 
