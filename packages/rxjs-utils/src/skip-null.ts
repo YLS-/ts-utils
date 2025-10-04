@@ -2,11 +2,11 @@ import { Observable, OperatorFunction, filter } from "rxjs"
 
 
 /**
- * Skips null values from the source Observable.
+ * Skips `null` and `undefined` values from the source Observable.
  * @returns A new Observable that emits non-null values.
  * @example
  * ```ts
- * of(1, null, 2, null, 3).pipe(skipNull()).subscribe(console.log)
+ * of(1, null, 2, undefined, 3).pipe(skipNull()).subscribe(console.log)
  * // Output: 1, 2, 3
  * ```
  */

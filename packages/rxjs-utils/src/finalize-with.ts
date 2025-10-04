@@ -8,12 +8,12 @@ import { MonoTypeOperatorFunction, Observable, defer, tap, finalize } from "rxjs
  * @example
  * ```ts
  * of(1, 2, 3).pipe(
- *   finalizeWithValue(lastValue => console.log('Last value was:', lastValue))
+ *   finalizeWith(lastValue => console.log('Last value was:', lastValue))
  * ).subscribe()
  * // Output: "Last value was: 3"
  * ```
  */
-export function finalizeWithValue<T>(callback: (value: T) => void): MonoTypeOperatorFunction<T>  {
+export function finalizeWith<T>(callback: (value: T) => void): MonoTypeOperatorFunction<T>  {
 	return (source: Observable<T>) => defer(() => {
 		let lastValue: T
 

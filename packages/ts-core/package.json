@@ -11,6 +11,16 @@
 			"types": "./dist/index.d.ts",
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.cjs"
+		},
+		"./array": {
+			"types": "./dist/array/methods.d.ts",
+			"import": "./dist/array/methods.mjs",
+			"require": "./dist/array/methods.cjs"
+		},
+		"./array/register": {
+			"types": "./dist/array/register.d.ts",
+			"import": "./dist/array/register.mjs",
+			"require": "./dist/array/register.cjs"
 		}
 	},
 	"files": [
@@ -18,9 +28,18 @@
 		"README.md",
 		"LICENSE"
 	],
-	"sideEffects": false,
+	"sideEffects": [
+		"./dist/array/register.mjs"
+	],
 	"engines": {
 		"node": ">=18"
+	},
+	"peerDependencies": {
+		"mime-types": "^3.0.1"
+	},
+	"devDependencies": {
+		"@types/mime-types": "^3.0.1",
+		"mime-types": "^3.0.1"
 	},
 	"scripts": {
 		"build": "tsup",
