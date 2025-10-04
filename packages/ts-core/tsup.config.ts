@@ -1,12 +1,16 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-	entry: ['src/index.ts'],
+	entry: {
+		'index': 'src/index.ts',
+		'array/methods': 'src/array/methods.ts',
+		'array/register': 'src/array/register.ts',
+	},
 	format: ['esm', 'cjs'],
 	dts: true,
 	sourcemap: true,
 	clean: true,
-	target: 'es2020',
+	target: 'es2023',
 	treeshake: true,
 	minify: false
 })
