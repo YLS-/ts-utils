@@ -1,25 +1,25 @@
 {
 	"name": "@yohs/ts-core",
-	"version": "0.2.0",
+	"version": "0.2.4",
 	"license": "MIT",
 	"type": "module",
 	"main": "./dist/index.cjs",
-	"module": "./dist/index.mjs",
+	"module": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"import": "./dist/index.mjs",
+			"import": "./dist/index.js",
 			"require": "./dist/index.cjs"
 		},
 		"./array": {
 			"types": "./dist/array/methods.d.ts",
-			"import": "./dist/array/methods.mjs",
+			"import": "./dist/array/methods.js",
 			"require": "./dist/array/methods.cjs"
 		},
 		"./array/register": {
 			"types": "./dist/array/register.d.ts",
-			"import": "./dist/array/register.mjs",
+			"import": "./dist/array/register.js",
 			"require": "./dist/array/register.cjs"
 		}
 	},
@@ -29,17 +29,16 @@
 		"LICENSE"
 	],
 	"sideEffects": [
-		"./dist/array/register.mjs"
+		"./dist/array/register.js"
 	],
 	"engines": {
 		"node": ">=18"
 	},
-	"peerDependencies": {
+	"dependencies": {
 		"mime-types": "^3.0.1"
 	},
 	"devDependencies": {
 		"@types/mime-types": "^3.0.1",
-		"mime-types": "^3.0.1",
 		"rimraf": "^6.0.1"
 	},
 	"scripts": {

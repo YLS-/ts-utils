@@ -4,7 +4,7 @@ import { MonoTypeOperatorFunction, Observable, of, switchMap, delay, distinctUnt
 /**
  * Switches immediately to the latest source value,
  * but only switches to `null` after a debounce time has elapsed.
- * It emulates a "cancellation with delay" behavior.
+ * This emulates a "delayed cancellation" behavior.
  * @param debounceTime - The debounce time in milliseconds.
  * @returns A MonoTypeOperatorFunction.
  * @example

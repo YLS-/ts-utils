@@ -23,3 +23,6 @@ define('last', function <T>(this: T[]) { return last(this) 	})
 define('random', function <T>(this: T[]) { return random(this) })
 define('swap', function <T>(this: T[], i: number, j: number) { return swap(this, i, j)})
 define('chunk', function <T>(this: T[], chunkSize: number) { return chunk(this, chunkSize) })
+
+// Make this file an external module for TypeScript
+export type __ts_core_array_register = true
