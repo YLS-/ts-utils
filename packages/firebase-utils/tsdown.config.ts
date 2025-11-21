@@ -6,6 +6,7 @@ export default defineConfig({
 		'auth': 'src/auth/index.ts',
 		'firestore': 'src/firestore/index.ts',
 		'storage': 'src/storage/index.ts',
+		'scripts': 'src/scripts/index.ts',
 	},
 	exports: true,
 	tsconfig: 'tsconfig.json',

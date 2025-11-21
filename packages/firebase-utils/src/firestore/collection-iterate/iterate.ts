@@ -157,8 +157,8 @@ export async function iterateCollection<T>(collection: Query<T>, options: Iterat
 		progress.update(iteratedDocs)
 
 		batchIndex++
-		lastBatchedDocID = snapshot.docs[-1]!.get(idField)
-		lastBatchedDoc = snapshot.docs[-1]!
+		lastBatchedDocID = snapshot.docs.at(-1)!.get(idField)
+		lastBatchedDoc = snapshot.docs.at(-1)!
 	} while (true)
 
 	progress.finish()
