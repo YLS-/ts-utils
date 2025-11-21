@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { CloudEvent } from 'cloudevents'
 
-import { matchesEventarcFilter, pickEventarcContext } from '../../src/eventarc'
+import { matchesEventarcFilter, pickEventarcContext } from '../../src/eventarc/gpt-recheck'
 
 describe('matchesEventarcFilter', () => {
 	it('matches wildcard filters', () => {

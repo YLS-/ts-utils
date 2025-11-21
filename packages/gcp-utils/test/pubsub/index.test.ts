@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest'
 import type { Message, PubSub, Topic } from '@google-cloud/pubsub'
 
-import { buildAckMetadata, createJsonPublisher, decodeJsonMessage, publishJson } from '../../src/pubsub'
+import { buildAckMetadata, createJsonPublisher, decodeJsonMessage, publishJson } from '../../src/pubsub/gpt-recheck'
 
 describe('publishJson', () => {
 	it('publishes payloads with normalized attributes', async () => {

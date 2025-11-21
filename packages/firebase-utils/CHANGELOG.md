@@ -1,5 +1,11 @@
 # @yohs/firebase-utils
 
+## 0.1.1
+
+### Patch Changes
+
+- Add gcs-object (GcsObjectRef type pointing at Storage file)
+
 ## 0.1.0
 
 ### Minor Changes

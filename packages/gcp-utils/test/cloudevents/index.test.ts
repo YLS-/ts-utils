@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { CloudEvent } from 'cloudevents'
 
-import { buildCloudEvent, parseHttpEvent, toBinaryHttp, toStructuredHttp } from '../../src/cloudevents'
+import { buildCloudEvent, parseHttpEvent, toBinaryHttp, toStructuredHttp } from '../../src/cloudevents/gpt-recheck'
 
 describe('buildCloudEvent', () => {
 	it('creates a CloudEvent with custom extensions', () => {

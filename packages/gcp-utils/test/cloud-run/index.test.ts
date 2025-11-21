@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 
-import { buildCloudRunUrl, invokeCloudRun } from '../../src/cloud-run'
+import { buildCloudRunUrl, invokeCloudRun } from '../../src/cloud-run/gpt-recheck'
 
 describe('buildCloudRunUrl', () => {
 	it('builds default run domain', () => {
