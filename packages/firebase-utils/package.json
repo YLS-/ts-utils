@@ -1,0 +1,60 @@
+{
+	"name": "@yohs/firebase-utils",
+	"version": "0.0.1",
+	"description": "Firebase Admin SDK utilities",
+	"license": "MIT",
+	"type": "module",
+	"engines": {
+		"node": ">=20"
+	},
+	"main": "./dist/index.mjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.mts",
+	"exports": {
+		".": "./dist/index.mjs",
+		"./auth": "./dist/auth.mjs",
+		"./firestore": "./dist/firestore.mjs",
+		"./storage": "./dist/storage.mjs",
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"sideEffects": false,
+	"scripts": {
+		"build": "tsdown",
+		"clean": "rimraf dist",
+		"test": "vitest run",
+		"lint": "eslint 'src/**/*.{ts,tsx}'",
+		"prepublishOnly": "pnpm run build && pnpm run test"
+	},
+	"dependencies": {
+		"@yohs/ts-core": "^0.3.0"
+	},
+	"peerDependencies": {
+		"firebase-admin": ">=11 <14"
+	},
+	"peerDependenciesMeta": {
+		"firebase-admin": {
+			"optional": true
+		}
+	},
+	"devDependencies": {
+		"firebase-admin": "^12.6.0",
+		"rimraf": "^6.0.1",
+		"tsdown": "^0.16.6"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/YLS-/ts-utils.git",
+		"directory": "packages/firebase-utils"
+	},
+	"homepage": "https://github.com/YLS-/ts-utils/tree/main/packages/firebase-utils",
+	"bugs": {
+		"url": "https://github.com/YLS-/ts-utils/issues"
+	}
+}

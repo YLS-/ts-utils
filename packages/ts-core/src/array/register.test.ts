@@ -5,7 +5,7 @@ describe('Array.prototype registration (array/register)', () => {
 	beforeEach(async () => {
 		const { vi } = await import('vitest')
 		vi.resetModules()
-		await import('../../src/array/register')
+		await import('./register')
 	})
 
 	it('registers methods on Array.prototype', async () => {
@@ -30,7 +30,7 @@ describe('Array.prototype registration (array/register)', () => {
 		const arr: any[] = []
 		const firstRef1 = (arr as any).first
 
-		await import('../../src/array/register')
+		await import('./register')
 		const firstRef2 = (arr as any).first
 		expect(firstRef2).toBe(firstRef1)
 	})

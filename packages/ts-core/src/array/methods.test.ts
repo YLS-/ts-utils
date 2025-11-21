@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { first, last, random, swap, chunk } from '../../src/array/methods'
+import { first, last, random, swap, chunk } from './methods'
 
 
 describe('first', () => {

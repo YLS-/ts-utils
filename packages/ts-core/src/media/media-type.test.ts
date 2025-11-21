@@ -2,12 +2,12 @@ import { describe, it, expect, vi, beforeEach } from 'vitest'
 
 
 describe('classifyMediaType - via mime-types lookup', () => {
-	let classifyMediaType: (p: string) => ReturnType<typeof import('../src/media-type').classifyMediaType>
+	let classifyMediaType: (p: string) => ReturnType<typeof import('./media-type').classifyMediaType>
 
 	beforeEach(async () => {
 		vi.resetModules()
 		vi.doUnmock('mime-types')
-		;({ classifyMediaType } = await import('../src/media-type'))
+		;({ classifyMediaType } = await import('./media-type'))
 	})
 
 	it('returns image for jpg and video for mp4 (case-insensitive)', () => {
@@ -18,12 +18,12 @@ describe('classifyMediaType - via mime-types lookup', () => {
 
 
 describe('classifyMediaType - fallback logic when lookup fails', () => {
-	let classifyMediaType: (p: string) => ReturnType<typeof import('../src/media-type').classifyMediaType>
+	let classifyMediaType: (p: string) => ReturnType<typeof import('./media-type').classifyMediaType>
 
 	beforeEach(async () => {
 		vi.resetModules()
 		vi.mock('mime-types', () => ({ lookup: () => false }))
-		;({ classifyMediaType } = await import('../src/media-type'))
+		;({ classifyMediaType } = await import('./media-type'))
 	})
 
 	it('uses fallback lists for image and video extensions', () => {

@@ -44,7 +44,7 @@ pnpm --filter <pkg-name> pack   # inspect generated .tgz contents
 
 ---
 
-## 4) Create a changeset
+## 4) Create a changeset (from monrepo root)
 
 ```bash
 pnpm changeset
@@ -53,7 +53,7 @@ pnpm changeset
 
 ---
 
-## 5) Apply version & changelog
+## 5) Apply version & changelog (from monrepo root)
 
 ```bash
 pnpm changeset version
@@ -63,7 +63,7 @@ git commit -m "chore(release): <pkg-name> vX.Y.Z"
 
 ---
 
-## 6) Publish to npm
+## 6) Publish to npm (from monrepo root)
 
 ```bash
 pnpm changeset publish

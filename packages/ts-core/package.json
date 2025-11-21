@@ -1,6 +1,6 @@
 {
 	"name": "@yohs/ts-core",
-	"version": "0.2.5",
+	"version": "0.3.0",
 	"license": "MIT",
 	"type": "module",
 	"engines": {
@@ -14,6 +14,7 @@
 		"./array/methods": "./dist/array/methods.mjs",
 		"./array/register": "./dist/array/register.mjs",
 		"./async": "./dist/async.mjs",
+		"./build-tools": "./dist/build-tools.mjs",
 		"./console-devtools": "./dist/console-devtools.mjs",
 		"./console-node": "./dist/console-node.mjs",
 		"./crypto": "./dist/crypto.mjs",

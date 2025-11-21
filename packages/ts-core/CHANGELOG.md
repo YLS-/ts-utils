@@ -1,5 +1,11 @@
 # @yohs/ts-core
 
+## 0.3.0
+
+### Minor Changes
+
+- Add all remaining TypeScript-only utils
+
 ## 0.2.5
 
 ### Patch Changes

@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { sleep$, randomPause } from '../src'
+import { sleep$, randomPause } from './sleep'
 
 
 describe('sleep$', () => {

@@ -1,0 +1,63 @@
+{
+	"name": "@yohs/gcp-utils",
+	"version": "0.0.1",
+	"description": "Google Cloud Platform utilities for Pub/Sub, CloudEvents, Eventarc, and Cloud Run",
+	"license": "MIT",
+	"type": "module",
+	"engines": {
+		"node": ">=20"
+	},
+	"main": "./dist/index.mjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.mts",
+	"exports": {
+		".": "./dist/index.mjs",
+		"./cloud-run": "./dist/cloud-run.mjs",
+		"./cloudevents": "./dist/cloudevents.mjs",
+		"./eventarc": "./dist/eventarc.mjs",
+		"./pubsub": "./dist/pubsub.mjs",
+		"./package.json": "./package.json"
+	},
+	"files": [
+		"dist",
+		"README.md"
+	],
+	"sideEffects": false,
+	"scripts": {
+		"build": "tsdown",
+		"clean": "rimraf dist",
+		"test": "vitest run",
+		"lint": "eslint 'src/**/*.{ts,tsx}'",
+		"prepublishOnly": "pnpm run build && pnpm run test"
+	},
+	"peerDependencies": {
+		"@google-cloud/pubsub": "^4",
+		"cloudevents": "^8"
+	},
+	"peerDependenciesMeta": {
+		"@google-cloud/pubsub": {
+			"optional": true
+		},
+		"cloudevents": {
+			"optional": true
+		}
+	},
+	"devDependencies": {
+		"@google-cloud/pubsub": "^4.4.3",
+		"cloudevents": "^8.0.0",
+		"rimraf": "^6.0.1",
+		"tsdown": "^0.16.6"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/YLS-/ts-utils.git",
+		"directory": "packages/gcp-utils"
+	},
+	"homepage": "https://github.com/YLS-/ts-utils/tree/main/packages/gcp-utils",
+	"bugs": {
+		"url": "https://github.com/YLS-/ts-utils/issues"
+	}
+}
