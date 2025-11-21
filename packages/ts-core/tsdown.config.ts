@@ -4,6 +4,9 @@ export default defineConfig({
 	entry: {
 		'index': 'src/index.ts',
 		'typescript': 'src/typescript/index.ts',
+		// 'console': 'src/console/index.ts',
+		'console-node': 'src/console/node/index.ts',
+		'console-devtools': 'src/console/devtools/index.ts',
 		'array/methods': 'src/array/methods.ts',
 		'array/register': 'src/array/register.ts',
 		'data': 'src/data/index.ts',
@@ -12,6 +15,7 @@ export default defineConfig({
 		'async': 'src/async/index.ts',
 		'media': 'src/media/index.ts',
 		'similarity': 'src/similarity/index.ts',
+		'http': 'src/http/index.ts',
 	},
 	exports: true,
 	tsconfig: 'tsconfig.json',
