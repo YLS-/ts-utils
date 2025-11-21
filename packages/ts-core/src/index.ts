@@ -8,4 +8,5 @@ export * from './media'
 export * from './http'
 export * from './console/node'
 export * from './console/devtools'
-export * from './build-tools'
+
+export * from './devtools'

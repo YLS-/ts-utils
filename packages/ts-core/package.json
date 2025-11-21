@@ -1,6 +1,6 @@
 {
 	"name": "@yohs/ts-core",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"license": "MIT",
 	"type": "module",
 	"engines": {
@@ -14,11 +14,11 @@
 		"./array/methods": "./dist/array/methods.mjs",
 		"./array/register": "./dist/array/register.mjs",
 		"./async": "./dist/async.mjs",
-		"./build-tools": "./dist/build-tools.mjs",
 		"./console-devtools": "./dist/console-devtools.mjs",
 		"./console-node": "./dist/console-node.mjs",
 		"./crypto": "./dist/crypto.mjs",
 		"./data": "./dist/data.mjs",
+		"./devtools": "./dist/devtools.mjs",
 		"./http": "./dist/http.mjs",
 		"./math": "./dist/math.mjs",
 		"./media": "./dist/media.mjs",
@@ -38,6 +38,7 @@
 		"build": "tsdown",
 		"clean": "rimraf dist",
 		"test": "vitest run",
+		"typecheck": "tsc --noEmit",
 		"lint": "eslint 'src/**/*.{ts,tsx}'",
 		"prepublishOnly": "pnpm run build && pnpm run test"
 	},
@@ -47,7 +48,8 @@
 	"devDependencies": {
 		"@types/mime-types": "^3.0.1",
 		"rimraf": "^6.0.1",
-		"tsdown": "^0.16.6"
+		"tsdown": "^0.16.6",
+		"typescript": "^5.9.3"
 	},
 	"publishConfig": {
 		"access": "public"

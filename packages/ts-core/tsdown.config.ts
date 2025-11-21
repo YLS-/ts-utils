@@ -16,7 +16,8 @@ export default defineConfig({
 		'media': 'src/media/index.ts',
 		'similarity': 'src/similarity/index.ts',
 		'http': 'src/http/index.ts',
-		'build-tools': 'src/build-tools/index.ts',
+
+		'devtools': 'src/devtools/index.ts',
 	},
 	exports: true,
 	tsconfig: 'tsconfig.json',
