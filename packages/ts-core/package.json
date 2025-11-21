@@ -1,27 +1,20 @@
 {
 	"name": "@yohs/ts-core",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"license": "MIT",
 	"type": "module",
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.js",
-	"types": "./dist/index.d.ts",
+	"engines": {
+		"node": ">=20"
+	},
+	"main": "./dist/index.mjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.mts",
 	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
-		},
-		"./array": {
-			"types": "./dist/array/methods.d.ts",
-			"import": "./dist/array/methods.js",
-			"require": "./dist/array/methods.cjs"
-		},
-		"./array/register": {
-			"types": "./dist/array/register.d.ts",
-			"import": "./dist/array/register.js",
-			"require": "./dist/array/register.cjs"
-		}
+		".": "./dist/index.mjs",
+		"./array/methods": "./dist/array/methods.mjs",
+		"./array/register": "./dist/array/register.mjs",
+		"./typescript": "./dist/typescript.mjs",
+		"./package.json": "./package.json"
 	},
 	"files": [
 		"dist",
@@ -31,22 +24,20 @@
 	"sideEffects": [
 		"./dist/array/register.js"
 	],
-	"engines": {
-		"node": ">=18"
+	"scripts": {
+		"build": "tsdown",
+		"clean": "rimraf dist",
+		"test": "vitest run",
+		"lint": "eslint 'src/**/*.{ts,tsx}'",
+		"prepublishOnly": "pnpm run build && pnpm run test"
 	},
 	"dependencies": {
 		"mime-types": "^3.0.1"
 	},
 	"devDependencies": {
 		"@types/mime-types": "^3.0.1",
-		"rimraf": "^6.0.1"
-	},
-	"scripts": {
-		"build": "tsup",
-		"clean": "rimraf dist",
-		"test": "vitest run",
-		"lint": "eslint 'src/**/*.{ts,tsx}'",
-		"prepublishOnly": "pnpm run build && pnpm run test"
+		"rimraf": "^6.0.1",
+		"tsdown": "^0.16.6"
 	},
 	"publishConfig": {
 		"access": "public"

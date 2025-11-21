@@ -1,13 +1,14 @@
 // Math utils
-export { round, clamp, sigmoid } from './math'
+export * from './math'
 
 // Array utils
 export { first, last, random, swap, chunk } from './array/methods'
 
-// Promise utils
-export { sleep$, randomPause } from './sleep'
+// Async utils
+export * from './async'
 
-
+// Typescript utils
+export * from './typescript'
 
 // Object utils
 // export { pick, omit } from './object/methods'

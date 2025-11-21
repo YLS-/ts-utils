@@ -1,5 +1,11 @@
 # @yohs/ts-core
 
+## 0.2.5
+
+### Patch Changes
+
+- Changed `mime-types` to direct dependency
+
 ## 0.2.4
 
 ### Patch Changes
