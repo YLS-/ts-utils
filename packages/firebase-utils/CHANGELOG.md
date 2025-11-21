@@ -1,5 +1,11 @@
 # @yohs/firebase-utils
 
+## 0.1.2
+
+### Patch Changes
+
+- Fix export gcs-object
+
 ## 0.1.1
 
 ### Patch Changes
