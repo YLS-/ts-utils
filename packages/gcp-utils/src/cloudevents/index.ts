@@ -1,4 +1,5 @@
 import { CloudEvent, HTTP } from 'cloudevents'
+import type { CloudEventV1 } from 'cloudevents'
 
 export interface BuildCloudEventOptions<T> {
 	type: string
@@ -37,7 +38,7 @@ export interface HttpCloudEvent {
 	body: unknown
 }
 
-export function toBinaryHttp(event: CloudEvent): HttpCloudEvent {
+export function toBinaryHttp<T>(event: CloudEvent<T>): HttpCloudEvent {
 	const message = HTTP.binary(event)
 	return {
 		headers: flattenHeaders(message.headers),
@@ -45,7 +46,7 @@ export function toBinaryHttp(event: CloudEvent): HttpCloudEvent {
 	}
 }
 
-export function toStructuredHttp(event: CloudEvent): HttpCloudEvent {
+export function toStructuredHttp<T>(event: CloudEvent<T>): HttpCloudEvent {
 	const message = HTTP.structured(event)
 	return {
 		headers: flattenHeaders(message.headers),
@@ -54,20 +55,52 @@ export function toStructuredHttp(event: CloudEvent): HttpCloudEvent {
 }
 
 export function parseHttpEvent(headers: HttpHeaders, body: unknown): CloudEvent<unknown> {
-	return HTTP.toEvent({ headers, body })
+	const normalized = normalizeHttpHeaders(headers)
+	const eventOrEvents = HTTP.toEvent({ headers: normalized, body })
+	const payload = Array.isArray(eventOrEvents) ? eventOrEvents[0] : eventOrEvents
+	return new CloudEvent(payload as CloudEventV1<unknown>)
 }
 
 export function isCloudEvent(input: unknown): input is CloudEvent {
 	return input instanceof CloudEvent
 }
 
-function flattenHeaders(headers: Headers | Record<string, string>): Record<string, string> {
+function flattenHeaders(headers: unknown): Record<string, string> {
 	const result: Record<string, string> = {}
-	if (typeof (headers as Headers).forEach === 'function') {
+	if (headers && typeof (headers as Headers).forEach === 'function') {
 		;(headers as Headers).forEach((value, key) => {
 			result[key] = value
 		})
 		return result
 	}
-	return { ...(headers as Record<string, string>) }
+
+	if (headers && typeof (headers as Iterable<[string, string]>)[Symbol.iterator] === 'function') {
+		for (const [key, value] of headers as Iterable<[string, string]>) {
+			result[key] = value
+		}
+		return result
+	}
+
+	if (headers && typeof headers === 'object') {
+		for (const [key, value] of Object.entries(headers as Record<string, string>)) {
+			result[key] = value
+		}
+	}
+
+	return result
+}
+
+function normalizeHttpHeaders(headers: HttpHeaders): Record<string, string | string[]> {
+	const result: Record<string, string | string[]> = {}
+	for (const [key, value] of Object.entries(headers)) {
+		if (value === undefined) {
+			continue
+		}
+		result[key] = isStringArray(value) ? [...value] : value
+	}
+	return result
+}
+
+function isStringArray(value: unknown): value is readonly string[] {
+	return Array.isArray(value)
 }

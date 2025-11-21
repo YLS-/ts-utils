@@ -7,7 +7,7 @@ export interface MatchOptions {
 	caseInsensitive?: boolean
 }
 
-export function matchesEventarcFilter(event: CloudEvent, filter: EventarcFilter, options: MatchOptions = {}): boolean {
+export function matchesEventarcFilter<T>(event: CloudEvent<T>, filter: EventarcFilter, options: MatchOptions = {}): boolean {
 	const comparator = options.caseInsensitive ? toLower : passthrough
 
 	return Object.entries(filter).every(([key, expected]) => {
@@ -21,7 +21,7 @@ export function matchesEventarcFilter(event: CloudEvent, filter: EventarcFilter,
 	})
 }
 
-export function pickEventarcContext(event: CloudEvent) {
+export function pickEventarcContext<T>(event: CloudEvent<T>) {
 	return {
 		type: event.type,
 		source: event.source,
@@ -32,7 +32,7 @@ export function pickEventarcContext(event: CloudEvent) {
 	}
 }
 
-function getAttribute(event: CloudEvent, key: string): unknown {
+function getAttribute<T>(event: CloudEvent<T>, key: string): unknown {
 	if (key in event) {
 		return (event as Record<string, unknown>)[key]
 	}

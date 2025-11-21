@@ -28,7 +28,10 @@ export interface InvokeCloudRunOptions {
 
 export async function invokeCloudRun(options: InvokeCloudRunOptions): Promise<Response> {
 	const fetcher = options.fetchImpl ?? fetch
-	const headers = { ...(options.json ? { 'content-type': 'application/json' } : {}), ...(options.headers ?? {}) }
+	const headers: Record<string, string> = {
+		...(options.json ? { 'content-type': 'application/json' } : {}),
+		...(options.headers ?? {}),
+	}
 	let body: BodyInit | undefined
 
 	if (options.json && options.body !== undefined) {
