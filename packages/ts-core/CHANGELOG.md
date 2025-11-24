@@ -1,5 +1,17 @@
 # @yohs/ts-core
 
+## 0.3.3
+
+### Patch Changes
+
+- Fix exports zlib
+
+## 0.3.2
+
+### Patch Changes
+
+- Add NDJSON, SHA-256, Brotli helpers
+
 ## 0.3.1
 
 ### Patch Changes

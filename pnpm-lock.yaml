@@ -51,8 +51,8 @@ importers:
   packages/firebase-utils:
     dependencies:
       '@yohs/ts-core':
-        specifier: ^0.3.0
-        version: 0.3.0
+        specifier: ^0.3.3
+        version: 0.3.3
     devDependencies:
       firebase-admin:
         specifier: ^12.6.0
@@ -1068,8 +1068,8 @@ packages:
   '@vitest/utils@3.2.4':
     resolution: {integrity: sha512-fB2V0JFrQSMsCo9HiSq3Ezpdv4iYaXRG1Sx8edX3MwxfyNn83mKiGzOcH+Fkxt4MHxr3y42fQi1oeAInqgX2QA==}
 
-  '@yohs/ts-core@0.3.0':
-    resolution: {integrity: sha512-8dDZRTWWi8a7fXAYdVHKoeTF/9IJ570069cmTvYH9PbrU1fgGgR12pTYDPPhg11/o6sR6U8ZM1lxL63EunaW6A==}
+  '@yohs/ts-core@0.3.3':
+    resolution: {integrity: sha512-qB23soPIfHZvWAZM1ocoUomx45EeuqFN+/nwBSH/uKK4UKJd7GSHE1KPtXphajxEThR6C3U1mmcPat/cQYXjcA==}
     engines: {node: '>=20'}
 
   abort-controller@3.0.0:
@@ -2064,6 +2064,10 @@ packages:
   mime-types@3.0.1:
     resolution: {integrity: sha512-xRc4oEhT6eaBpU1XF7AjpOFD+xQmXNB5OVKwp4tqCuBpHLS/ZbBDrc07mYTDqVMg6PfxUjjNp85O6Cd2Z/5HWA==}
     engines: {node: '>= 0.6'}
+
+  mime-types@3.0.2:
+    resolution: {integrity: sha512-Lbgzdk0h4juoQ9fCKXW4by0UJqj+nOOrI9MJ1sSj4nI8aI2eo1qmvQEie4VD1glsS250n15LsWsYtCugiStS5A==}
+    engines: {node: '>=18'}
 
   mime@3.0.0:
     resolution: {integrity: sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==}
@@ -3923,9 +3927,9 @@ snapshots:
       loupe: 3.2.1
       tinyrainbow: 2.0.0
 
-  '@yohs/ts-core@0.3.0':
+  '@yohs/ts-core@0.3.3':
     dependencies:
-      mime-types: 3.0.1
+      mime-types: 3.0.2
 
   abort-controller@3.0.0:
     dependencies:
@@ -5033,6 +5037,10 @@ snapshots:
     optional: true
 
   mime-types@3.0.1:
+    dependencies:
+      mime-db: 1.54.0
+
+  mime-types@3.0.2:
     dependencies:
       mime-db: 1.54.0
 

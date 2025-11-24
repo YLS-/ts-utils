@@ -1,6 +1,6 @@
 {
 	"name": "@yohs/firebase-utils",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "Firebase Admin SDK utilities",
 	"license": "MIT",
 	"type": "module",
@@ -26,12 +26,13 @@
 	"scripts": {
 		"build": "tsdown",
 		"clean": "rimraf dist",
-		"test": "vitest run",
+		"typecheck": "tsc --noEmit",
 		"lint": "eslint 'src/**/*.{ts,tsx}'",
+		"test": "vitest run",
 		"prepublishOnly": "pnpm run build && pnpm run test"
 	},
 	"dependencies": {
-		"@yohs/ts-core": "^0.3.0"
+		"@yohs/ts-core": "^0.3.3"
 	},
 	"peerDependencies": {
 		"firebase-admin": ">=11 <14"

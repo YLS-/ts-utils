@@ -12,6 +12,7 @@ export default defineConfig({
 		data: 'src/data/index.ts',
 		math: 'src/math/index.ts',
 		crypto: 'src/crypto/index.ts',
+		zlib: 'src/zlib/index.ts',
 		async: 'src/async/index.ts',
 		media: 'src/media/index.ts',
 		similarity: 'src/similarity/index.ts',

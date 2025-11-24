@@ -1,5 +1,11 @@
 # @yohs/firebase-utils
 
+## 0.3.0
+
+### Minor Changes
+
+- Add Storage upload helpers
+
 ## 0.2.0
 
 ### Minor Changes

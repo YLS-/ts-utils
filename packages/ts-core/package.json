@@ -1,6 +1,6 @@
 {
 	"name": "@yohs/ts-core",
-	"version": "0.3.1",
+	"version": "0.3.3",
 	"license": "MIT",
 	"type": "module",
 	"engines": {
@@ -24,6 +24,7 @@
 		"./media": "./dist/media.mjs",
 		"./similarity": "./dist/similarity.mjs",
 		"./typescript": "./dist/typescript.mjs",
+		"./zlib": "./dist/zlib.mjs",
 		"./package.json": "./package.json"
 	},
 	"files": [
@@ -37,9 +38,9 @@
 	"scripts": {
 		"build": "tsdown",
 		"clean": "rimraf dist",
-		"test": "vitest run",
 		"typecheck": "tsc --noEmit",
 		"lint": "eslint 'src/**/*.{ts,tsx}'",
+		"test": "vitest run",
 		"prepublishOnly": "pnpm run build && pnpm run test"
 	},
 	"dependencies": {
