@@ -1,5 +1,11 @@
 # @yohs/firebase-utils
 
+## 0.3.2
+
+### Patch Changes
+
+- Export GCS internal types
+
 ## 0.3.1
 
 ### Patch Changes
