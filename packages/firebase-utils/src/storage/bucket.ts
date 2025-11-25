@@ -1,10 +1,6 @@
 import type { Storage } from 'firebase-admin/storage'
+import type { Bucket, CreateBucketRequest, File, GetSignedUrlConfig, SaveOptions } from './types'
 
-export type Bucket = ReturnType<Storage['bucket']>
-export type File = ReturnType<Bucket['file']>
-type GetSignedUrlConfig = Parameters<File['getSignedUrl']>[0]
-type SaveOptions = Parameters<File['save']>[1]
-type CreateBucketRequest = Parameters<Bucket['create']>[0]
 
 export interface EnsureBucketOptions extends CreateBucketRequest {
 	autoCreate?: boolean

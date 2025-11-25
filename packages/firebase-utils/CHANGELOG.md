@@ -1,5 +1,11 @@
 # @yohs/firebase-utils
 
+## 0.3.1
+
+### Patch Changes
+
+- Fix undefined in file upload ref object
+
 ## 0.3.0
 
 ### Minor Changes

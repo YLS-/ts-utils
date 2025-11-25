@@ -1,6 +1,6 @@
 // Firebase
 import { Timestamp } from 'firebase-admin/firestore'
-import type { Bucket } from './bucket'
+import type { Bucket, SaveOptions } from './types'
 export type SaveData = string | Buffer //| Uint8Array
 
 import type { GcsObjectRef } from './gcs-object'
@@ -42,16 +42,17 @@ export async function uploadFile(bucket: Bucket, fileDir: string, fileName: stri
 	const file = bucket.file(filePath)
 
 	// file upload (non-streamed)
-	await file.save(d, {
+	const saveOptions: SaveOptions = {
 		resumable: false,
 		validation: 'crc32c',	// integrity check
 		// preconditionOpts: { ifGenerationMatch: 0 },	// only create if not already present
 		metadata: {
-			contentType: opts.metadata?.contentType,
-			contentEncoding: opts.compression ? 'br' : undefined,
-			cacheControl: opts.metadata?.cacheControl
+			...(opts.metadata?.contentType ? { contentType: opts.metadata.contentType } : {}),
+			...(opts.compression ? { contentEncoding: 'br' } : {}),
+			...(opts.metadata?.cacheControl ? { cacheControl: opts.metadata.cacheControl } : {}),
 		}
-	})
+	}
+	await file.save(d, saveOptions)
 
 	// make file public (if requested)
 	if (opts.public) await file.makePublic()
@@ -63,8 +64,8 @@ export async function uploadFile(bucket: Bucket, fileDir: string, fileName: stri
 		fileName: fileNameWithCompression,
 		bytes: (d instanceof Buffer) ? d.byteLength : d.length,
 		hash: `sha256:${hash}`,
-		contentType: opts.metadata?.contentType,
-		compression: opts.compression ? 'br' : undefined
+		...(opts.metadata?.contentType ? { contentType: opts.metadata.contentType } : {}),
+		compression: opts.compression ? 'br' : 'none'
 	}
 
 	return ref
