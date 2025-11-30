@@ -11,6 +11,9 @@ export interface GcsObjectRef {
 	/** When we last re-wrote / refreshed this pointer (e.g., re-tokenized). */
 	updatedAt?: TimestampLike
 
+	/** Bucket name. */
+	bucket: string
+
 	/** gs://bucket/path/to/file */
 	filePath: string
 

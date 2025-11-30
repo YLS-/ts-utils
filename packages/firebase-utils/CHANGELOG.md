@@ -1,5 +1,11 @@
 # @yohs/firebase-utils
 
+## 0.3.3
+
+### Patch Changes
+
+- Add `bucket` field on `GcsObjectRef`
+
 ## 0.3.2
 
 ### Patch Changes

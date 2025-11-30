@@ -60,6 +60,7 @@ export async function uploadFile(bucket: Bucket, fileDir: string, fileName: stri
 	// GCS object metadata
 	const ref: GcsObjectRef = {
 		createdAt: Timestamp.now(),
+		bucket: bucket.name,
 		filePath: filePath,
 		fileName: fileNameWithCompression,
 		bytes: (d instanceof Buffer) ? d.byteLength : d.length,

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
 import type { Storage } from 'firebase-admin/storage'
-import type { Bucket, File, EnsureBucketOptions } from './bucket'
+import type { Bucket, File } from './types'
 
 import { buildGcsUri, ensureBucket, getSignedDownloadUrl, uploadJson } from './bucket'
 

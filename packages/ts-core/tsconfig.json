@@ -1,5 +1,5 @@
 {
 	"extends": "../../tsconfig.base.json",
-	"include": ["src"],
+	"include": ["src", "../node-utils/src/console/node", "../node-utils/src/console/index.ts", "../node-utils/src/console/progress_bar.ts", "../node-utils/src/http/waitfor-logger.ts", "../node-utils/src/zlib"],
 	"exclude": ["**/*.test.ts"]
 }

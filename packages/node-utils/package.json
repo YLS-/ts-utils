@@ -1,6 +1,7 @@
 {
-	"name": "@yohs/ts-core",
-	"version": "0.3.3",
+	"name": "@yohs/node-utils",
+	"version": "0.1.0",
+	"description": "Node.js-focused utilities for env parsing, filesystem IO, console UX, and process orchestration.",
 	"license": "MIT",
 	"type": "module",
 	"engines": {
@@ -11,28 +12,20 @@
 	"types": "./dist/index.d.mts",
 	"exports": {
 		".": "./dist/index.mjs",
-		"./array/methods": "./dist/array/methods.mjs",
-		"./array/register": "./dist/array/register.mjs",
-		"./async": "./dist/async.mjs",
 		"./console": "./dist/console.mjs",
 		"./crypto": "./dist/crypto.mjs",
-		"./data": "./dist/data.mjs",
-		"./devtools": "./dist/devtools.mjs",
+		"./env": "./dist/env.mjs",
+		"./fs": "./dist/fs.mjs",
 		"./http": "./dist/http.mjs",
-		"./math": "./dist/math.mjs",
-		"./media": "./dist/media.mjs",
-		"./similarity": "./dist/similarity.mjs",
-		"./typescript": "./dist/typescript.mjs",
+		"./process": "./dist/process.mjs",
+		"./zlib": "./dist/zlib.mjs",
 		"./package.json": "./package.json"
 	},
 	"files": [
 		"dist",
-		"README.md",
-		"LICENSE"
+		"README.md"
 	],
-	"sideEffects": [
-		"./dist/array/register.js"
-	],
+	"sideEffects": false,
 	"scripts": {
 		"build": "tsdown",
 		"clean": "rimraf dist",
@@ -41,24 +34,23 @@
 		"test": "vitest run",
 		"prepublishOnly": "pnpm run build && pnpm run test"
 	},
-	"dependencies": {
-		"mime-types": "^3.0.1"
-	},
-	"devDependencies": {
-		"@types/mime-types": "^3.0.1",
-		"rimraf": "^6.0.1",
-		"tsdown": "^0.16.6",
-		"typescript": "^5.9.3"
-	},
 	"publishConfig": {
 		"access": "public"
+	},
+	"dependencies": {
+		"execa": "^9.5.2"
+	},
+	"devDependencies": {
+		"rimraf": "^6.1.2",
+		"tsdown": "^0.16.6",
+		"typescript": "^5.9.3"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/YLS-/ts-utils.git",
-		"directory": "packages/ts-core"
+		"directory": "packages/node-utils"
 	},
-	"homepage": "https://github.com/YLS-/ts-utils/tree/main/packages/ts-core",
+	"homepage": "https://github.com/YLS-/ts-utils/tree/main/packages/node-utils",
 	"bugs": {
 		"url": "https://github.com/YLS-/ts-utils/issues"
 	}

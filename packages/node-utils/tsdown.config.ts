@@ -2,12 +2,14 @@ import { defineConfig } from 'tsdown'
 
 export default defineConfig({
 	entry: {
-		'index': 'src/index.ts',
-		'pubsub': 'src/pubsub/index.ts',
-		'cloudevents': 'src/cloudevents/index.ts',
-		'eventarc': 'src/eventarc/index.ts',
-		'cloud-run': 'src/cloud-run/index.ts',
-		'functions': 'src/functions/index.ts',
+		index: 'src/index.ts',
+		env: 'src/env/index.ts',
+		fs: 'src/fs/index.ts',
+		process: 'src/process/index.ts',
+		console: 'src/console/index.ts',
+		crypto: 'src/crypto/index.ts',
+		http: 'src/http/index.ts',
+		zlib: 'src/zlib/index.ts',
 	},
 	exports: true,
 	tsconfig: 'tsconfig.json',
@@ -21,3 +23,4 @@ export default defineConfig({
 	treeshake: true,
 	minify: false,
 })
+

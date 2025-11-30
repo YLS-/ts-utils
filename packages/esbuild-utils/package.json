@@ -1,7 +1,7 @@
 {
-	"name": "@yohs/gcp-utils",
+	"name": "@yohs/esbuild-utils",
 	"version": "0.1.0",
-	"description": "Google Cloud Platform utilities for Pub/Sub, CloudEvents, Eventarc, and Cloud Run",
+	"description": "Reusable esbuild plugins, runners, and CLI helpers",
 	"license": "MIT",
 	"type": "module",
 	"engines": {
@@ -12,11 +12,7 @@
 	"types": "./dist/index.d.mts",
 	"exports": {
 		".": "./dist/index.mjs",
-		"./cloud-run": "./dist/cloud-run.mjs",
-		"./cloudevents": "./dist/cloudevents.mjs",
-		"./eventarc": "./dist/eventarc.mjs",
-		"./functions": "./dist/functions.mjs",
-		"./pubsub": "./dist/pubsub.mjs",
+		"./plugins": "./dist/plugins.mjs",
 		"./package.json": "./package.json"
 	},
 	"files": [
@@ -25,28 +21,29 @@
 	],
 	"sideEffects": false,
 	"scripts": {
-		"build": "tsdown",
 		"clean": "rimraf dist",
-		"test": "vitest run",
+		"build": "tsdown",
 		"typecheck": "tsc --noEmit",
 		"lint": "eslint 'src/**/*.{ts,tsx}'",
+		"test": "vitest run",
 		"prepublishOnly": "pnpm run build && pnpm run test"
 	},
+	"dependencies": {
+		"@yohs/node-utils": "workspace:*",
+		"chalk": "^5.6.2"
+	},
 	"peerDependencies": {
-		"@google-cloud/pubsub": "^4",
-		"cloudevents": "^8"
+		"@yohs/gcp-utils": "workspace:*",
+		"esbuild": "^0.24.0"
 	},
 	"peerDependenciesMeta": {
-		"@google-cloud/pubsub": {
-			"optional": true
-		},
-		"cloudevents": {
+		"@yohs/gcp-utils": {
 			"optional": true
 		}
 	},
 	"devDependencies": {
-		"@google-cloud/pubsub": "^5.2.0",
-		"cloudevents": "^10.0.0",
+		"@yohs/gcp-utils": "workspace:*",
+		"esbuild": "^0.24.0",
 		"rimraf": "^6.1.2",
 		"tsdown": "^0.16.6",
 		"typescript": "^5.9.3"
@@ -57,13 +54,10 @@
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/YLS-/ts-utils.git",
-		"directory": "packages/gcp-utils"
+		"directory": "packages/esbuild-utils"
 	},
-	"homepage": "https://github.com/YLS-/ts-utils/tree/main/packages/gcp-utils",
+	"homepage": "https://github.com/YLS-/ts-utils/tree/main/packages/esbuild-utils",
 	"bugs": {
 		"url": "https://github.com/YLS-/ts-utils/issues"
-	},
-	"dependencies": {
-		"chalk": "^5.6.2"
 	}
 }

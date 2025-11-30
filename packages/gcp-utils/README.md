@@ -9,6 +9,7 @@ including Pub/Sub, CloudEvents, Eventarc, and Cloud Run.
 - CloudEvents tooling for HTTP intake and structured event construction
 - Eventarc filters + matcher utilities
 - Cloud Run signature helpers for calling private services
+- Functions Framework runner utilities for local dev loops
 
 Install via npm/pnpm once published:
 

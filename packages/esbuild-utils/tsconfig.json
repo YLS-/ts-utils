@@ -3,9 +3,12 @@
 	"compilerOptions": {
 		"paths": {
 			"@yohs/node-utils": ["../node-utils/src/index.ts"],
-			"@yohs/node-utils/*": ["../node-utils/src/*"]
+			"@yohs/node-utils/*": ["../node-utils/src/*"],
+			"@yohs/gcp-utils": ["../gcp-utils/src/index.ts"],
+			"@yohs/gcp-utils/*": ["../gcp-utils/src/*"]
 		}
 	},
 	"include": ["src", "test"],
 	"exclude": ["**/*.test.ts"]
 }
+
