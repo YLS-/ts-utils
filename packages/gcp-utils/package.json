@@ -1,6 +1,6 @@
 {
 	"name": "@yohs/gcp-utils",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Google Cloud Platform utilities for Pub/Sub, CloudEvents, Eventarc, and Cloud Run",
 	"license": "MIT",
 	"type": "module",

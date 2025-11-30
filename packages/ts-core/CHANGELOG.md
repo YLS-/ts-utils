@@ -1,5 +1,11 @@
 # @yohs/ts-core
 
+## 0.3.4
+
+### Patch Changes
+
+- Moved Node-only utilities to separate package, added process runners helpers (npx / functions-framework), added ESbuild plugins (console, runners)
+
 ## 0.3.3
 
 ### Patch Changes

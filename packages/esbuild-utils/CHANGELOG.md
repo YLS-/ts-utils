@@ -1,13 +1,13 @@
-# @yohs/gcp-utils
+# @yohs/esbuild-utils
 
-## 0.1.1
-
-### Patch Changes
-
-- Moved Node-only utilities to separate package, added process runners helpers (npx / functions-framework), added ESbuild plugins (console, runners)
-
-## 0.1.0
+## 0.2.0
 
 ### Minor Changes
 
-- Add `cloudevents`, `eventarc` emulation tools
+- Moved Node-only utilities to separate package, added process runners helpers (npx / functions-framework), added ESbuild plugins (console, runners)
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @yohs/node-utils@0.2.0
+  - @yohs/gcp-utils@0.1.1
