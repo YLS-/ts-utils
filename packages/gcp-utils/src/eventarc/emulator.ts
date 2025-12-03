@@ -109,7 +109,7 @@ export class EventarcEmulator {
 
 			try {
 				// Send as *structured* CloudEvent JSON (what functions-framework accepts)
-				const res: Response = await this._dispatcher.publishPubSubEvent(pubsubEvent, topic)
+				const res: Response = await this._dispatcher.publishPubSubEvent(pubsubEvent, topic, targetUrl)
 				if (!res.ok) throw new Error(`${res.status} ${await res.text()}`)
 				message.ack()
 			} catch (e) {

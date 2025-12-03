@@ -1,5 +1,11 @@
 # @yohs/gcp-utils
 
+## 0.1.3
+
+### Patch Changes
+
+- Made EventArc targetUrl explicit
+
 ## 0.1.2
 
 ### Patch Changes

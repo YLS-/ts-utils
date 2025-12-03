@@ -21,11 +21,11 @@ export interface PubSubEvent {
 
 export class CloudEventDispatcher {
 	private _projectId: string
-	private _baseUrl: string
+	// private _baseUrl: string
 
-	constructor(projectId: string, baseUrl: string = 'http://localhost:5012') {
+	constructor(projectId: string/*, baseUrl: string = 'http://localhost:5012'*/) {
 		this._projectId = projectId
-		this._baseUrl = baseUrl
+		// this._baseUrl = baseUrl
 	}
 
 
@@ -33,12 +33,12 @@ export class CloudEventDispatcher {
 	 * Send a Cloud Event request
 	 * @param event - The Cloud Event to send (encoded in structured mode)
 	 */
-	public async sendCloudEvent<T>(event: CloudEvent<T>): Promise<Response> {
+	public async sendCloudEvent<T>(event: CloudEvent<T>, targetUrl: string): Promise<Response> {
 		const ceBody = event.cloneWith({
 			time: event.time ?? new Date().toISOString()
 		})
 
-		const response = await fetch(this._baseUrl, {
+		const response = await fetch(targetUrl, {
 			method: 'POST',
 			headers: { 'content-type': 'application/cloudevents+json' },
 			body: JSON.stringify(ceBody)
@@ -54,9 +54,9 @@ export class CloudEventDispatcher {
 	 * @param data - The data to publish
 	 * @returns The response from the Cloud Event dispatcher
 	 */
-	public async publishPubSubEvent(pubsubEvent: PubSubEvent, topic: string): Promise<Response> {
+	public async publishPubSubEvent(pubsubEvent: PubSubEvent, topic: string, targetUrl: string): Promise<Response> {
 		const event: CloudEvent<PubSubEvent> = this._toStructuredCloudEvent(pubsubEvent, topic)
-		const response = await this.sendCloudEvent(event)
+		const response = await this.sendCloudEvent(event, targetUrl)
 		return response
 	}
 
