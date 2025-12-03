@@ -1,5 +1,11 @@
 # @yohs/gcp-utils
 
+## 0.1.2
+
+### Patch Changes
+
+- Removed chalk
+
 ## 0.1.1
 
 ### Patch Changes

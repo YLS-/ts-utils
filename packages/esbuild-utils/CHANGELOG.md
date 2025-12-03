@@ -1,5 +1,18 @@
 # @yohs/esbuild-utils
 
+## 0.2.2
+
+### Patch Changes
+
+- Added unit tests plugins
+
+## 0.2.1
+
+### Patch Changes
+
+- Updated dependencies []:
+  - @yohs/gcp-utils@0.1.2
+
 ## 0.2.0
 
 ### Minor Changes

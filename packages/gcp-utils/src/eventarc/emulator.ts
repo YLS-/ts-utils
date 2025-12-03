@@ -1,4 +1,8 @@
-import chalk from 'chalk'
+import { styleText } from 'node:util'
+const red = (text: any) => styleText('red', String(text))
+const blue = (text: any) => styleText('blue', String(text))
+const yellow = (text: any) => styleText('yellow', String(text))
+const gray = (text: any) => styleText('gray', String(text))
 
 import { Message, PubSub, Subscription, Topic } from '@google-cloud/pubsub'
 import { CloudEventDispatcher, PubSubEvent } from '../cloudevents/dispatcher'
@@ -17,13 +21,16 @@ export class EventarcEmulator {
 		this._dispatcher = new CloudEventDispatcher(projectId)
 	}
 
+	private _log(msg: string, ...args: any[]) {
+		console.log(red('[eventarc]'), msg, ...args)
+	}
 
 	public async listTopics() {
 		const [topics] = await this._pubsub.getTopics()
-		console.log(`${chalk.red('[eventarc]')} Found ${chalk.yellow(topics.length)} topics`, topics.map(t => t.name))
+		this._log(`Found ${yellow(topics.length)} topics`, topics.map(t => t.name))
 
 		const [subs] = await this._pubsub.getSubscriptions()
-		console.log(`${chalk.red('[eventarc]')} Found ${chalk.yellow(subs.length)} subscriptions`, subs.map(s => s.name))
+		this._log(`Found ${yellow(subs.length)} subscriptions`, subs.map(s => s.name))
 	}
 
 
@@ -33,18 +40,18 @@ export class EventarcEmulator {
 
 
 	private async _ensure(topicName: string) {
-		console.log(`${chalk.red('[eventarc]')} Ensuring topic ${chalk.blue(topicName)} exists...`)
+		this._log(`Ensuring topic ${blue(topicName)} exists...`)
 
 		const topic: Topic = this._pubsub.topic(topicName)
 		const [topicExists] = await topic.exists()
 
 		if (topicExists) {
-			console.log(`${chalk.red('[eventarc]')} Topic ${chalk.blue(topicName)} already exists`)
+			this._log(`Topic ${blue(topicName)} already exists`)
 		} else {
-			console.log(`${chalk.red('[eventarc]')} Topic ${chalk.blue(topicName)} does not exist, creating...`)
+			this._log(`Topic ${blue(topicName)} does not exist, creating...`)
 			try {
 				await topic.create()
-				console.log(`${chalk.red('[eventarc]')} Topic ${chalk.blue(topicName)} created`)
+				this._log(`Topic ${blue(topicName)} created`)
 			} catch (e: any) {
 				if (e.code !== 6 /* ALREADY_EXISTS */) throw e
 			}
@@ -59,7 +66,7 @@ export class EventarcEmulator {
 
 		try {
 			await sub.create()
-			console.log(`${chalk.red('[eventarc]')} Subscription ${chalk.blue(subName)} created`)
+			this._log(`Subscription ${blue(subName)} created`)
 		} catch (e: any) {
 			if (e.code !== 6) throw e
 		}
@@ -75,7 +82,7 @@ export class EventarcEmulator {
 		sub.on('message', async (message: Message) => {
 			// const time = Timestamp.fromDate(message.publishTime)
 			// const timeFormatted = timestampTimeFormatted(time, true)
-			// console.log(`${chalk.red('[eventarc]')} ${chalk.blue('(' + topic + ':' + message.id + ')')} Received PubSub message ${chalk.gray('(' + timeFormatted + ')')}`)
+			// this._log(`${blue('(' + topic + ':' + message.id + ')')} Received PubSub message ${gray('(' + timeFormatted + ')')}`)
 
 			// decode
 			const buffer: Buffer = message.data
@@ -106,12 +113,12 @@ export class EventarcEmulator {
 				if (!res.ok) throw new Error(`${res.status} ${await res.text()}`)
 				message.ack()
 			} catch (e) {
-				console.error(`${chalk.red('[eventarc]')} ❌ Forward error:`, e)
+				this._log('❌ Forward error:', e)
 				// message.nack()
 			}
 		})
 
-		console.log(`${chalk.red('[eventarc]')} Set up route for ${chalk.blue(topic)} → ${chalk.gray(targetUrl)}`)
+		this._log(`Set up route for ${blue(topic)} → ${gray(targetUrl)}`)
 	}
 
 

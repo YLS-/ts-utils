@@ -30,7 +30,7 @@ export class CloudEventDispatcher {
 
 
 	/**
-	 * Send a test Cloud Event request
+	 * Send a Cloud Event request
 	 * @param event - The Cloud Event to send (encoded in structured mode)
 	 */
 	public async sendCloudEvent<T>(event: CloudEvent<T>): Promise<Response> {
