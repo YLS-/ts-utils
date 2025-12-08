@@ -1,5 +1,11 @@
 # @yohs/firebase-utils
 
+## 0.3.4
+
+### Patch Changes
+
+- Fixed Node-only deps (sha256, brotli)
+
 ## 0.3.3
 
 ### Patch Changes

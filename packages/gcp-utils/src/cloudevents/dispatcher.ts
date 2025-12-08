@@ -61,6 +61,8 @@ export class CloudEventDispatcher {
 	}
 
 
+	// TODO: separate more cleanly the "PubSub / EventAr" parts from this;
+	// TODO: this class should be ONLY a CloudEvent wrapper / sender service (actually it does very little)
 	/**
 	 * Wraps a PubSub event in a Cloud Event
 	 * @param pubsubEvent - The PubSub event to convert
@@ -71,8 +73,8 @@ export class CloudEventDispatcher {
 		const { message } = pubsubEvent
 
 		const event = new CloudEvent<PubSubEvent>({
-			type: 'google.cloud.pubsub.topic.v1.messagePublished',
 			specversion: '1.0',
+			type: 'google.cloud.pubsub.topic.v1.messagePublished',
 			source: `//pubsub.googleapis.com/projects/${this._projectId}/topics/${topic}`,
 			id: message.messageId ?? `ce-${topic}-${Math.random().toString(36).slice(2)}`,
 			time: message.publishTime ?? new Date().toISOString(),

@@ -4,7 +4,7 @@ import type { DocumentData, DocumentReference, Firestore, WriteResult } from 'fi
 import { chunkArray, commitInChunks, type WriteOperation } from '../../src/firestore/batch'
 
 const stubRef = (path: string) => ({ path } as DocumentReference<DocumentData>)
-const stubResult = (): WriteResult => ({ updateTime: new Date() } as WriteResult)
+const stubResult = (): WriteResult => ({ updateTime: new Date() } as unknown as WriteResult)
 
 const createFirestore = () => {
 	return {

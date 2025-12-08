@@ -4,8 +4,8 @@ import type { Bucket, SaveOptions } from './types'
 export type SaveData = string | Buffer //| Uint8Array
 
 import type { GcsObjectRef } from './gcs-object'
-import { sha256 } from '@yohs/ts-core/crypto'
-import { brotli } from '@yohs/ts-core/zlib'
+import { sha256 } from '@yohs/node-utils/crypto'
+import { brotli } from '@yohs/node-utils/zlib'
 
 
 export interface UploadFileMetadata {

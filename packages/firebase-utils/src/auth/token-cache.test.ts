@@ -10,7 +10,7 @@ describe('TokenVerifierCache', () => {
 
 	it('returns cached tokens until ttl expires', async () => {
 		let now = 0
-		const auth = buildAuth({ uid: 'uid', exp: 10 })
+		const auth = buildAuth({ uid: 'uid', exp: 10 } as unknown as DecodedIdToken)
 		const cache = new TokenVerifierCache(auth, { ttlMs: 5_000, clock: () => now, safetyWindowMs: 0 })
 
 		const first = await cache.verify('token')

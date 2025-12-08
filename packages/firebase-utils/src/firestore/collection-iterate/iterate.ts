@@ -1,7 +1,7 @@
 // utils
 // import '@yohs/ts-core/array/register'
 import { chunk } from '@yohs/ts-core/array/methods'
-import { ProgressBar } from '@yohs/ts-core/console-node'
+import { ProgressBar } from '@yohs/node-utils/console'
 
 // Firebase API
 import * as admin from 'firebase-admin'

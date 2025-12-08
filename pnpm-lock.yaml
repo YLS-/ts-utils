@@ -75,9 +75,12 @@ importers:
 
   packages/firebase-utils:
     dependencies:
+      '@yohs/node-utils':
+        specifier: ^0.2.0
+        version: 0.2.0
       '@yohs/ts-core':
-        specifier: ^0.3.3
-        version: 0.3.3
+        specifier: ^0.3.4
+        version: 0.3.4
     devDependencies:
       firebase-admin:
         specifier: ^12.6.0
@@ -1262,8 +1265,12 @@ packages:
   '@vitest/utils@3.2.4':
     resolution: {integrity: sha512-fB2V0JFrQSMsCo9HiSq3Ezpdv4iYaXRG1Sx8edX3MwxfyNn83mKiGzOcH+Fkxt4MHxr3y42fQi1oeAInqgX2QA==}
 
-  '@yohs/ts-core@0.3.3':
-    resolution: {integrity: sha512-qB23soPIfHZvWAZM1ocoUomx45EeuqFN+/nwBSH/uKK4UKJd7GSHE1KPtXphajxEThR6C3U1mmcPat/cQYXjcA==}
+  '@yohs/node-utils@0.2.0':
+    resolution: {integrity: sha512-I/uCVNkq4NF7QXnJHGPkIlxYjjW6aUfO2ar0TpVMF780skQwn9C0CG3xldkRJAWvj9KJch7pGXRSEpQ/TO/YZg==}
+    engines: {node: '>=20'}
+
+  '@yohs/ts-core@0.3.4':
+    resolution: {integrity: sha512-vtli+Q1Jq7wbLQunTP9aQYb5U6uLj8z8D39uVMoAbynXTtkJqM4sywZoS3NnZTv48zjUaL0GymFuusUylBhe2g==}
     engines: {node: '>=20'}
 
   abort-controller@3.0.0:
@@ -4261,7 +4268,11 @@ snapshots:
       loupe: 3.2.1
       tinyrainbow: 2.0.0
 
-  '@yohs/ts-core@0.3.3':
+  '@yohs/node-utils@0.2.0':
+    dependencies:
+      execa: 9.6.1
+
+  '@yohs/ts-core@0.3.4':
     dependencies:
       mime-types: 3.0.2
 
