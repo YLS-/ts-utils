@@ -1,5 +1,11 @@
 # @yohs/ts-core
 
+## 0.3.5
+
+### Patch Changes
+
+- Removed Node resolveAsset helper
+
 ## 0.3.4
 
 ### Patch Changes

@@ -6,3 +6,4 @@ export * from './crypto'
 export * from './http'
 export * from './zlib'
 
+export * from './devtools'

@@ -1,6 +1,6 @@
 {
 	"name": "@yohs/node-utils",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Node.js-focused utilities for env parsing, filesystem IO, console UX, and process orchestration.",
 	"license": "MIT",
 	"type": "module",
@@ -14,6 +14,7 @@
 		".": "./dist/index.mjs",
 		"./console": "./dist/console.mjs",
 		"./crypto": "./dist/crypto.mjs",
+		"./devtools": "./dist/devtools.mjs",
 		"./env": "./dist/env.mjs",
 		"./fs": "./dist/fs.mjs",
 		"./http": "./dist/http.mjs",

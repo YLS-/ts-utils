@@ -1,6 +1,6 @@
 {
 	"name": "@yohs/ts-core",
-	"version": "0.3.4",
+	"version": "0.3.5",
 	"license": "MIT",
 	"type": "module",
 	"engines": {
@@ -17,7 +17,6 @@
 		"./console": "./dist/console.mjs",
 		"./crypto": "./dist/crypto.mjs",
 		"./data": "./dist/data.mjs",
-		"./devtools": "./dist/devtools.mjs",
 		"./http": "./dist/http.mjs",
 		"./math": "./dist/math.mjs",
 		"./media": "./dist/media.mjs",

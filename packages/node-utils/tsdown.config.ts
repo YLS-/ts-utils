@@ -10,6 +10,7 @@ export default defineConfig({
 		crypto: 'src/crypto/index.ts',
 		http: 'src/http/index.ts',
 		zlib: 'src/zlib/index.ts',
+		devtools: 'src/devtools/index.ts',
 	},
 	exports: true,
 	tsconfig: 'tsconfig.json',

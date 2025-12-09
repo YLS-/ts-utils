@@ -6,5 +6,3 @@ export * from './data'
 export * from './crypto'
 export * from './media'
 export * from './http'
-
-export * from './devtools'

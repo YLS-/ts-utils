@@ -1,5 +1,11 @@
 # @yohs/node-utils
 
+## 0.2.1
+
+### Patch Changes
+
+- Removed Node resolveAsset helper
+
 ## 0.2.0
 
 ### Minor Changes
