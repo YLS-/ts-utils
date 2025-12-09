@@ -1,6 +1,6 @@
 {
 	"name": "@yohs/ts-core",
-	"version": "0.3.5",
+	"version": "0.3.6",
 	"license": "MIT",
 	"type": "module",
 	"engines": {
@@ -30,7 +30,7 @@
 		"LICENSE"
 	],
 	"sideEffects": [
-		"./dist/array/register.js"
+		"./dist/array/register.mjs"
 	],
 	"scripts": {
 		"build": "tsdown",

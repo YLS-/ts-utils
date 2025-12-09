@@ -1,5 +1,11 @@
 # @yohs/ts-core
 
+## 0.3.6
+
+### Patch Changes
+
+- Fixed array methods file name for side effects
+
 ## 0.3.5
 
 ### Patch Changes
