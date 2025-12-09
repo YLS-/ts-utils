@@ -1,5 +1,17 @@
 # @yohs/gcp-utils
 
+## 0.1.5
+
+### Patch Changes
+
+- Bumped peerDeps
+
+## 0.1.4
+
+### Patch Changes
+
+- Bumped peerDeps
+
 ## 0.1.3
 
 ### Patch Changes

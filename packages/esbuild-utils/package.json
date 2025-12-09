@@ -1,6 +1,6 @@
 {
 	"name": "@yohs/esbuild-utils",
-	"version": "0.2.3",
+	"version": "0.2.5",
 	"description": "Reusable esbuild plugins, runners, and CLI helpers",
 	"license": "MIT",
 	"type": "module",
@@ -29,12 +29,11 @@
 		"prepublishOnly": "pnpm run build && pnpm run test"
 	},
 	"dependencies": {
-		"@yohs/node-utils": "workspace:*",
 		"chalk": "^5.6.2"
 	},
 	"peerDependencies": {
-		"@yohs/gcp-utils": "workspace:*",
-		"esbuild": "^0.24.0"
+		"@yohs/gcp-utils": "^0.1.5",
+		"esbuild": "^0.25"
 	},
 	"peerDependenciesMeta": {
 		"@yohs/gcp-utils": {

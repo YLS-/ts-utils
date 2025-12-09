@@ -1,5 +1,23 @@
 # @yohs/esbuild-utils
 
+## 0.2.5
+
+### Patch Changes
+
+- Bumped peerDeps
+
+- Updated dependencies []:
+  - @yohs/gcp-utils@0.1.5
+
+## 0.2.4
+
+### Patch Changes
+
+- Bumped peerDeps
+
+- Updated dependencies []:
+  - @yohs/gcp-utils@0.1.4
+
 ## 0.2.3
 
 ### Patch Changes

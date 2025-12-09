@@ -1,6 +1,6 @@
 {
 	"name": "@yohs/gcp-utils",
-	"version": "0.1.3",
+	"version": "0.1.5",
 	"description": "Google Cloud Platform utilities for Pub/Sub, CloudEvents, Eventarc, and Cloud Run",
 	"license": "MIT",
 	"type": "module",
@@ -33,8 +33,8 @@
 		"prepublishOnly": "pnpm run build && pnpm run test"
 	},
 	"peerDependencies": {
-		"@google-cloud/pubsub": "^4",
-		"cloudevents": "^8"
+		"@google-cloud/pubsub": "^5",
+		"cloudevents": "^10"
 	},
 	"peerDependenciesMeta": {
 		"@google-cloud/pubsub": {
