@@ -1,5 +1,11 @@
 # @yohs/ts-core
 
+## 0.3.7
+
+### Patch Changes
+
+- Moved Node code to node-utils
+
 ## 0.3.6
 
 ### Patch Changes

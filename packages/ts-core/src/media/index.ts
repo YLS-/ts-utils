@@ -1,2 +1,2 @@
 export * from './media-type'
-export * from './img-buffer'
+export * from '../../../node-utils/src/image/img-buffer'

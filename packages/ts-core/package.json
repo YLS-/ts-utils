@@ -1,11 +1,8 @@
 {
 	"name": "@yohs/ts-core",
-	"version": "0.3.6",
+	"version": "0.3.7",
 	"license": "MIT",
 	"type": "module",
-	"engines": {
-		"node": ">=20"
-	},
 	"main": "./dist/index.mjs",
 	"module": "./dist/index.mjs",
 	"types": "./dist/index.d.mts",
@@ -40,11 +37,7 @@
 		"test": "vitest run",
 		"prepublishOnly": "pnpm run build && pnpm run test"
 	},
-	"dependencies": {
-		"mime-types": "^3.0.1"
-	},
 	"devDependencies": {
-		"@types/mime-types": "^3.0.1",
 		"rimraf": "^6.0.1",
 		"tsdown": "^0.16.6",
 		"typescript": "^5.9.3"

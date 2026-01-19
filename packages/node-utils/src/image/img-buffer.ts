@@ -1,4 +1,4 @@
-import { Size } from '../math/geom'
+import type { Size } from '@yohs/ts-core/math'
 
 
 export type ChannelOrder = 'RGB' | 'BGR'

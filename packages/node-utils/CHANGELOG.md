@@ -1,5 +1,14 @@
 # @yohs/node-utils
 
+## 0.2.2
+
+### Patch Changes
+
+- Moved Node code to node-utils
+
+- Updated dependencies []:
+  - @yohs/ts-core@0.3.7
+
 ## 0.2.1
 
 ### Patch Changes
