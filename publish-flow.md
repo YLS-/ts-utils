@@ -66,6 +66,7 @@ git commit -m "chore(release): <pkg-name> vX.Y.Z"
 ## 6) Publish to npm (from monrepo root)
 
 ```bash
+npm login
 pnpm changeset publish
 git push --follow-tags
 ```

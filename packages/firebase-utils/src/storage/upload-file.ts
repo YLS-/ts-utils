@@ -11,6 +11,7 @@ import { brotli } from '@yohs/node-utils/zlib'
 export interface UploadFileMetadata {
 	contentType?: string
 	cacheControl?: string
+	customMetadata?: Record<string, string>
 }
 
 export interface UploadFileOptions {
@@ -50,6 +51,7 @@ export async function uploadFile(bucket: Bucket, fileDir: string, fileName: stri
 			...(opts.metadata?.contentType ? { contentType: opts.metadata.contentType } : {}),
 			...(opts.compression ? { contentEncoding: 'br' } : {}),
 			...(opts.metadata?.cacheControl ? { cacheControl: opts.metadata.cacheControl } : {}),
+			...(opts.metadata?.customMetadata ? { metadata: opts.metadata.customMetadata } : {})
 		}
 	}
 	await file.save(d, saveOptions)
