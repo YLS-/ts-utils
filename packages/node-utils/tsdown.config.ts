@@ -3,6 +3,7 @@ import { defineConfig } from 'tsdown'
 export default defineConfig({
 	entry: {
 		index: 'src/index.ts',
+		buffer: 'src/buffer/index.ts',
 		env: 'src/env/index.ts',
 		fs: 'src/fs/index.ts',
 		process: 'src/process/index.ts',

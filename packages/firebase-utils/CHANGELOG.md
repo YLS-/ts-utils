@@ -1,5 +1,11 @@
 # @yohs/firebase-utils
 
+## 0.3.5
+
+### Patch Changes
+
+- Allow custom metadata on Storage uploads
+
 ## 0.3.4
 
 ### Patch Changes

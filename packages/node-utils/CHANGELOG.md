@@ -1,5 +1,11 @@
 # @yohs/node-utils
 
+## 0.2.3
+
+### Patch Changes
+
+- Export NDJSON helper
+
 ## 0.2.2
 
 ### Patch Changes

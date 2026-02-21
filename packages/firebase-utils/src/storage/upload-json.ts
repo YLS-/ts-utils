@@ -1,5 +1,5 @@
 // utils
-import { toNDJSON } from '@yohs/ts-core/data'
+import { toNDJSON } from '@yohs/node-utils/buffer'
 
 // Firebase
 import type { Bucket } from './types'
